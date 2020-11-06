@@ -30,11 +30,11 @@ repository:
       -Ddeployment.method=HELM_CHART
 
       -Xms2000M -Xmx2000M"
-  resources:
-    requests:
-      memory: "3000Mi"
-    limits:
-      memory: "3000Mi"
+#  resources:
+#    requests:
+#      memory: "3000Mi"
+#    limits:
+#      memory: "3000Mi"
   # The repository readiness probe is used to check startup only as a failure
   # of the liveness probe later will result in the pod being restarted.
   readinessProbe:
@@ -64,11 +64,11 @@ aio:
     name: aio
     type: ClusterIP
     externalPort: 80
-  resources:
-    requests:
-      memory: "1000Mi"
-    limits:
-      memory: "1000Mi"
+#  resources:
+#    requests:
+#      memory: "1000Mi"
+#    limits:
+#      memory: "1000Mi"
   environment:
     JAVA_OPTS: " -Xms256M -Xmx512M"
   readinessProbe:
@@ -100,11 +100,11 @@ share:
   ingress:
     path: /share
     annotations: {}
-  resources:
-    requests:
-      memory: "2000Mi"
-    limits:
-      memory: "2000Mi"
+#  resources:
+#    requests:
+#      memory: "2000Mi"
+#    limits:
+#      memory: "2000Mi"
   environment:
     CATALINA_OPTS: " -Xms1000M -Xmx1000M"
   readinessProbe:
@@ -188,11 +188,11 @@ postgresql:
   persistence:
     existingClaim: "alfresco-volume-claim"
     subPath: "alfresco-content-services/database-data"
-  resources:
-    requests:
-      memory: "1500Mi"
-    limits:
-      memory: "1500Mi"
+#  resources:
+#    requests:
+#      memory: "1500Mi"
+#    limits:
+#      memory: "1500Mi"
 
 
 # If there is a need to pull images from a private docker repo, a secret can be defined in helm and passed as an argument
